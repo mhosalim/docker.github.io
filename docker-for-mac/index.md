@@ -59,13 +59,13 @@ docker-machine version 0.10.0, build 76ed2a6
 2.  For something more adventurous, start a Dockerized web server.
 
     ```bash
-    docker run -d -p 80:80 --name webserver nginx
+    docker run -d -p 127.0.0.1:{port number}:80 --name webserver nginx
     ```
 
     If the image is not found locally, Docker will pull it from Docker Hub.
 
-    In a web browser, go to `http://localhost/` to bring up the home page.
-    (Since you specified the default HTTP port, it isn't necessary to append
+    In a web browser, go to `http://localhost:{port number}/` to bring up the home page.
+    (If you specified the default HTTP port, it isn't necessary to append
     `:80` at the end of the URL.)
 
     ![nginx home page](images/hello-world-nginx.png)
